@@ -1,155 +1,150 @@
 import { defineMessages } from '@edx/frontend-platform/i18n';
 
 const messages = defineMessages({
-  'footer.socialLinks.srText.facebook': {
-    id: 'footer.socialLinks.srText.facebook',
-    defaultMessage: 'Like edX on Facebook',
-    description: 'This is screenreader text for the edX Facebook social media link in the footer.',
+  'footer.overview.heading': {
+    id: 'footer.overview.heading',
+    defaultMessage: 'Overview',
+    description: 'Heading for the overview column in the KKUx footer.',
   },
-  'footer.socialLinks.srText.twitter': {
-    id: 'footer.socialLinks.srText.twitter',
-    defaultMessage: 'Follow edX on Twitter',
-    description: 'This is screenreader text for the edX Twitter social media link in the footer.',
+  'footer.overview.about': {
+    id: 'footer.overview.about',
+    defaultMessage: 'About KKUx',
+    description: 'Link to the about page.',
   },
-  'footer.socialLinks.srText.youtube': {
-    id: 'footer.socialLinks.srText.youtube',
-    defaultMessage: 'Subscribe to the edX YouTube channel',
-    description: 'This is screenreader text for the edX YouTube social media link in the footer.',
+  'footer.overview.contact': {
+    id: 'footer.overview.contact',
+    defaultMessage: 'Contact us',
+    description: 'Link to the contact page.',
   },
-  'footer.socialLinks.srText.linkedin': {
-    id: 'footer.socialLinks.srText.linkedin',
-    defaultMessage: 'Follow edX on LinkedIn',
-    description: 'This is screenreader text for the edX LinkedIn social media link in the footer.',
+  'footer.overview.help': {
+    id: 'footer.overview.help',
+    defaultMessage: 'Help center',
+    description: 'Link to the help center.',
   },
-  'footer.socialLinks.srText.reddit': {
-    id: 'footer.socialLinks.srText.reddit',
-    defaultMessage: 'Subscribe to the edX subreddit',
-    description: 'This is screenreader text for the edX reddit social media link in the footer.',
+  'footer.overview.terms': {
+    id: 'footer.overview.terms',
+    defaultMessage: 'Terms & Conditions',
+    description: 'Link to the terms and conditions page.',
   },
-  'footer.languageForm.select.label': {
-    id: 'footer.languageForm.select.label',
-    defaultMessage: 'Choose Language',
-    description: 'The label for the laguage select part of the language selection form.',
+  'footer.support.heading': {
+    id: 'footer.support.heading',
+    defaultMessage: 'Support & help',
+    description: 'Heading for the support column in the KKUx footer.',
   },
-  'footer.languageForm.submit.label': {
-    id: 'footer.languageForm.submit.label',
-    defaultMessage: 'Apply',
-    description: 'The label for button to submit the language selection form.',
+  'footer.support.faq': {
+    id: 'footer.support.faq',
+    defaultMessage: 'FAQ',
+    description: 'Link to the FAQ page.',
   },
-  'footer.edxLinks.about': {
-    id: 'footer.edxLinks.about',
-    defaultMessage: 'About',
-    description: 'The label for the link to the about edX page.',
+  'footer.support.complaint': {
+    id: 'footer.support.complaint',
+    defaultMessage: 'Submit a complaint',
+    description: 'Link to submit a complaint.',
   },
-  'footer.edxLinks.business': {
-    id: 'footer.edxLinks.business',
-    defaultMessage: 'edX for Business',
-    description: 'The label for the link to the edX for business page.',
+  'footer.support.directLabel': {
+    id: 'footer.support.directLabel',
+    defaultMessage: 'Direct line',
+    description: 'Label for the direct phone line.',
   },
-  'footer.edxLinks.affiliates': {
-    id: 'footer.edxLinks.affiliates',
-    defaultMessage: 'Affiliates',
-    description: 'The label for the link to the edX affiliates page.',
+  'footer.support.phone': {
+    id: 'footer.support.phone',
+    defaultMessage: '+966172417518',
+    description: 'The support phone number.',
   },
-  'footer.edxLinks.openEdx': {
-    id: 'footer.edxLinks.openEdx',
-    defaultMessage: 'Open edX',
-    description: 'The label for the link to the open edX site.',
+  'footer.support.hours': {
+    id: 'footer.support.hours',
+    defaultMessage: 'Saturday \u2013 8 AM to 3 PM',
+    description: 'Operating hours for support.',
   },
-  'footer.edxLinks.careers': {
-    id: 'footer.edxLinks.careers',
-    defaultMessage: 'Careers',
-    description: 'The label for the link to the edX Careers page.',
+  'footer.support.whatsappLabel': {
+    id: 'footer.support.whatsappLabel',
+    defaultMessage: 'WhatsApp',
+    description: 'Label for the WhatsApp contact.',
   },
-  'footer.edxLinks.news': {
-    id: 'footer.edxLinks.news',
-    defaultMessage: 'News',
-    description: 'The label for the link to the edX news page.',
+  'footer.support.whatsappPhone': {
+    id: 'footer.support.whatsappPhone',
+    defaultMessage: '+966172417518',
+    description: 'The WhatsApp phone number.',
   },
-  'footer.legalLinks.heading': {
-    id: 'footer.legalLinks.heading',
-    defaultMessage: 'Legal',
-    description: 'Heading for the legal links section of the footer.',
+  'footer.support.email': {
+    id: 'footer.support.email',
+    defaultMessage: 'kkux@kku.edu.sa',
+    description: 'The support email address.',
   },
-  'footer.legalLinks.termsOfService': {
-    id: 'footer.legalLinks.termsOfService',
-    defaultMessage: 'Terms of Service & Honor Code',
-    description: 'The label for the link to the edX terms of service page.',
+  'footer.related.heading': {
+    id: 'footer.related.heading',
+    defaultMessage: 'Related links',
+    description: 'Heading for the related links column.',
   },
-  'footer.legalLinks.privacyPolicy': {
-    id: 'footer.legalLinks.privacyPolicy',
+  'footer.related.vision': {
+    id: 'footer.related.vision',
+    defaultMessage: 'Saudi Vision 2030',
+    description: 'Link to Saudi Vision 2030.',
+  },
+  'footer.related.kku': {
+    id: 'footer.related.kku',
+    defaultMessage: 'King Khalid University',
+    description: 'Link to King Khalid University.',
+  },
+  'footer.related.ncel': {
+    id: 'footer.related.ncel',
+    defaultMessage: 'National Center for E-Learning',
+    description: 'Link to the National Center for E-Learning.',
+  },
+  'footer.follow.heading': {
+    id: 'footer.follow.heading',
+    defaultMessage: 'Follow us',
+    description: 'Heading for the follow us / social media column.',
+  },
+  'footer.social.x.label': {
+    id: 'footer.social.x.label',
+    defaultMessage: 'X',
+    description: 'Aria-label for the X (Twitter) social icon.',
+  },
+  'footer.social.facebook.label': {
+    id: 'footer.social.facebook.label',
+    defaultMessage: 'Facebook',
+    description: 'Aria-label for the Facebook social icon.',
+  },
+  'footer.social.linkedin.label': {
+    id: 'footer.social.linkedin.label',
+    defaultMessage: 'LinkedIn',
+    description: 'Aria-label for the LinkedIn social icon.',
+  },
+  'footer.social.instagram.label': {
+    id: 'footer.social.instagram.label',
+    defaultMessage: 'Instagram',
+    description: 'Aria-label for the Instagram social icon.',
+  },
+  'footer.legal.terms': {
+    id: 'footer.legal.terms',
+    defaultMessage: 'Terms & Conditions',
+    description: 'Link to terms and conditions in the bottom legal bar.',
+  },
+  'footer.legal.privacy': {
+    id: 'footer.legal.privacy',
     defaultMessage: 'Privacy Policy',
-    description: 'The label for the link to the edX privacy policy page.',
+    description: 'Link to privacy policy in the bottom legal bar.',
   },
-  'footer.legalLinks.a11yPolicy': {
-    id: 'footer.legalLinks.a11yPolicy',
-    defaultMessage: 'Accessibility Policy',
-    description: 'The label for the link to the edX accessibility policy page.',
+  'footer.legal.sitemap': {
+    id: 'footer.legal.sitemap',
+    defaultMessage: 'Site map',
+    description: 'Link to the site map.',
   },
-  'footer.legalLinks.trademarkPolicy': {
-    id: 'footer.legalLinks.trademarkPolicy',
-    defaultMessage: 'Trademark Policy',
-    description: 'The label for the link to the edX trademark policy page.',
+  'footer.copyright': {
+    id: 'footer.copyright',
+    defaultMessage: 'All rights reserved to King Khalid University \u00a9 {year}',
+    description: 'Copyright text with dynamic year.',
   },
-  'footer.legalLinks.sitemap': {
-    id: 'footer.legalLinks.sitemap',
-    defaultMessage: 'Sitemap',
-    description: 'The label for the link to the edX sitemap page.',
-  },
-  'footer.connectLinks.heading': {
-    id: 'footer.connectLinks.heading',
-    defaultMessage: 'Connect',
-    description: 'Heading for the connect links section of the footer.',
-  },
-  'footer.connectLinks.blog': {
-    id: 'footer.connectLinks.blog',
-    defaultMessage: 'Blog',
-    description: 'The label for the link to the edX blog.',
-  },
-  'footer.connectLinks.contact': {
-    id: 'footer.connectLinks.contact',
-    defaultMessage: 'Contact Us',
-    description: 'The label for the link to the contact edX page.',
-  },
-  'footer.connectLinks.help': {
-    id: 'footer.connectLinks.help',
-    defaultMessage: 'Help Center',
-    description: 'The label for the link to the edX help center.',
-  },
-  'footer.connectLinks.mediaKit': {
-    id: 'footer.connectLinks.mediaKit',
-    defaultMessage: 'Media Kit',
-    description: 'The label for the link to the edX media kit page.',
-  },
-  'footer.connectLinks.donate': {
-    id: 'footer.connectLinks.donate',
-    defaultMessage: 'Donate',
-    description: 'The label for the link to the edX donation page.',
-  },
-  'footer.mobileApp.apple': {
-    id: 'footer.mobileApp.apple',
-    defaultMessage: 'Download the edX mobile app from the Apple App Store',
-    description: 'The label for the link to download the apple version of the edX app.',
-  },
-  'footer.mobileApp.google': {
-    id: 'footer.mobileApp.google',
-    defaultMessage: 'Download the edX mobile app from Google Play',
-    description: 'The label for the link to download the google version of the edX app.',
-  },
-  'footer.logo.altText': {
-    id: 'footer.logo.altText',
-    defaultMessage: 'Powered by Open edX',
-    description: 'alt text for the footer logo.',
-  },
-  'footer.logo.ariaLabel': {
-    id: 'footer.logo.ariaLabel',
-    defaultMessage: 'edX Home',
-    description: 'aria-label for the footer logo.',
+  'footer.logos.ariaLabel': {
+    id: 'footer.logos.ariaLabel',
+    defaultMessage: 'Partner logos',
+    description: 'Aria-label for the partner logos group.',
   },
   'footer.ariaLabel': {
     id: 'footer.ariaLabel',
     defaultMessage: 'Page Footer',
-    description: 'aria-label for the footer component',
+    description: 'Aria-label for the footer component.',
   },
 });
 
