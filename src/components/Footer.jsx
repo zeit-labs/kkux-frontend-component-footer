@@ -55,7 +55,7 @@ const SiteFooter = () => {
       }
       return text;
     }
-    return t(msg, values);
+    return intl.formatMessage(msg, values);
   };
 
   const handleLinkClick = (href) => {
