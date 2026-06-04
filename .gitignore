@@ -11,3 +11,4 @@ temp/babel-plugin-react-intl
 /.vscode
 module.config.js
 src/i18n/messages
+edx-frontend-component-footer-*.tgz

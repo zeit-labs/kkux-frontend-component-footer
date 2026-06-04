@@ -4,7 +4,7 @@ import { sendTrackEvent } from '@edx/frontend-platform/analytics';
 import { ensureConfig } from '@edx/frontend-platform';
 import { AppContext } from '@edx/frontend-platform/react';
 
-import messages from './Footer.messages';
+import messages, { arMessages } from './Footer.messages';
 import XLogo from './logos/XLogo';
 import FacebookLogo from './logos/FacebookLogo';
 import InstagramLogo from './logos/InstagramLogo';
@@ -44,6 +44,19 @@ const SiteFooter = () => {
   const intl = useIntl();
   const { config } = useContext(AppContext);
   const currentYear = new Date().getFullYear();
+  const isArabic = intl.locale && intl.locale.startsWith('ar');
+
+  // Locale-aware translation: uses Arabic override if locale is 'ar-*', else English default.
+  const t = (msg, values) => {
+    if (isArabic && arMessages[msg.id]) {
+      let text = arMessages[msg.id];
+      if (values) {
+        Object.keys(values).forEach((key) => { text = text.replace(`{${key}}`, values[key]); });
+      }
+      return text;
+    }
+    return t(msg, values);
+  };
 
   const handleLinkClick = (href) => {
     sendTrackEvent(EVENT_NAMES.FOOTER_LINK, {
@@ -53,67 +66,67 @@ const SiteFooter = () => {
   };
 
   const overviewLinks = [
-    { key: 'about', label: intl.formatMessage(messages['footer.overview.about']) },
-    { key: 'contact', label: intl.formatMessage(messages['footer.overview.contact']) },
-    { key: 'help', label: intl.formatMessage(messages['footer.overview.help']) },
-    { key: 'terms', label: intl.formatMessage(messages['footer.overview.terms']) },
+    { key: 'about', label: t(messages['footer.overview.about']) },
+    { key: 'contact', label: t(messages['footer.overview.contact']) },
+    { key: 'help', label: t(messages['footer.overview.help']) },
+    { key: 'terms', label: t(messages['footer.overview.terms']) },
   ];
 
   const legalLinks = [
-    { key: 'terms', label: intl.formatMessage(messages['footer.legal.terms']) },
-    { key: 'privacy', label: intl.formatMessage(messages['footer.legal.privacy']) },
-    { key: 'sitemap', label: intl.formatMessage(messages['footer.legal.sitemap']) },
+    { key: 'terms', label: t(messages['footer.legal.terms']) },
+    { key: 'privacy', label: t(messages['footer.legal.privacy']) },
+    { key: 'sitemap', label: t(messages['footer.legal.sitemap']) },
   ];
 
   const relatedLinks = [
-    { key: 'vision', label: intl.formatMessage(messages['footer.related.vision']) },
-    { key: 'kku', label: intl.formatMessage(messages['footer.related.kku']) },
-    { key: 'ncel', label: intl.formatMessage(messages['footer.related.ncel']) },
+    { key: 'vision', label: t(messages['footer.related.vision']) },
+    { key: 'kku', label: t(messages['footer.related.kku']) },
+    { key: 'ncel', label: t(messages['footer.related.ncel']) },
   ];
 
   return (
-    <footer className="kkux-footer" role="contentinfo" aria-label={intl.formatMessage(messages['footer.ariaLabel'])}>
+    <footer className="kkux-footer" role="contentinfo" aria-label={t(messages['footer.ariaLabel'])}>
       {/* ---- main columns ---- */}
       <div className="kkux-footer__top">
         <div className="kkux-footer__grid">
-          <FooterColumn heading={intl.formatMessage(messages['footer.overview.heading'])}>
+          <FooterColumn heading={t(messages['footer.overview.heading'])}>
             {overviewLinks.map((item) => (
               <FooterText key={item.key}>{item.label}</FooterText>
             ))}
           </FooterColumn>
 
-          <FooterColumn heading={intl.formatMessage(messages['footer.support.heading'])}>
-            <FooterText>{intl.formatMessage(messages['footer.support.faq'])}</FooterText>
-            <FooterText>{intl.formatMessage(messages['footer.support.complaint'])}</FooterText>
+          <FooterColumn heading={t(messages['footer.support.heading'])}>
+            <FooterText>{t(messages['footer.support.faq'])}</FooterText>
+            <FooterText>{t(messages['footer.support.complaint'])}</FooterText>
             <div className="kkux-footer__spaced-sm">
               <FooterText>
-                <span>{intl.formatMessage(messages['footer.support.directLabel'])}</span>
-                <bdi className="kkux-footer__pe-sm">{intl.formatMessage(messages['footer.support.phone'])}</bdi>
+                <span>{t(messages['footer.support.directLabel'])}</span>
+                <bdi className="kkux-footer__pe-sm">{t(messages['footer.support.phone'])}</bdi>
               </FooterText>
               <p className="kkux-footer__hours">
-                {intl.formatMessage(messages['footer.support.hours'])}
+                {t(messages['footer.support.hours'])}
               </p>
             </div>
             <FooterText>
-              <span>{intl.formatMessage(messages['footer.support.whatsappLabel'])}</span>
-              <bdi className="kkux-footer__pe-sm">{intl.formatMessage(messages['footer.support.whatsappPhone'])}</bdi>
+              <span>{t(messages['footer.support.whatsappLabel'])}</span>
+              <bdi className="kkux-footer__pe-sm">{t(messages['footer.support.whatsappPhone'])}</bdi>
             </FooterText>
           </FooterColumn>
 
-          <FooterColumn heading={intl.formatMessage(messages['footer.related.heading'])}>
+          <FooterColumn heading={t(messages['footer.related.heading'])}>
             {relatedLinks.map((item) => (
               <FooterText key={item.key}>{item.label}</FooterText>
             ))}
           </FooterColumn>
 
-          <FooterColumn heading={intl.formatMessage(messages['footer.follow.heading'])}>
+          <FooterColumn heading={t(messages['footer.follow.heading'])}>
             <ul className="kkux-footer__social-list">
               {socialLinks.map(({ key, Logo, labelKey }) => (
                 <li key={key}>
                   <a
                     href="#"
                     className="kkux-footer__social-icon"
-                    aria-label={intl.formatMessage(messages[labelKey])}
+                    aria-label={t(messages[labelKey])}
                     onClick={(e) => { e.preventDefault(); handleLinkClick(key); }}
                   >
                     <Logo className="kkux-footer__social-svg" />
@@ -122,10 +135,10 @@ const SiteFooter = () => {
               ))}
             </ul>
             <a
-              href={`mailto:${intl.formatMessage(messages['footer.support.email'])}`}
+              href={`mailto:${t(messages['footer.support.email'])}`}
               className="kkux-footer__email"
             >
-              <bdi>{intl.formatMessage(messages['footer.support.email'])}</bdi>
+              <bdi>{t(messages['footer.support.email'])}</bdi>
             </a>
           </FooterColumn>
         </div>
@@ -146,11 +159,11 @@ const SiteFooter = () => {
               ))}
             </ul>
             <p className="kkux-footer__copyright">
-              {intl.formatMessage(messages['footer.copyright'], { year: currentYear })}
+              {t(messages['footer.copyright'], { year: currentYear })}
             </p>
           </div>
 
-          <ul className="kkux-footer__logos" aria-label={intl.formatMessage(messages['footer.logos.ariaLabel'])}>
+          <ul className="kkux-footer__logos" aria-label={t(messages['footer.logos.ariaLabel'])}>
             <li className="kkux-footer__logo-item">
               <PlatformPlainLogo className="kkux-footer__logo--platform" />
             </li>
