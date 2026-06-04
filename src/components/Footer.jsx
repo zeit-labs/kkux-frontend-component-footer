@@ -44,7 +44,8 @@ const SiteFooter = () => {
   const intl = useIntl();
   const { config } = useContext(AppContext);
   const currentYear = new Date().getFullYear();
-  const isArabic = intl.locale && intl.locale.startsWith('ar');
+  const isArabic = intl.locale && intl.locale.startsWith('ar')
+    || (typeof document !== 'undefined' && document.documentElement.dir === 'rtl');
 
   // Locale-aware translation: uses Arabic override if locale is 'ar-*', else English default.
   const t = (msg, values) => {
