@@ -69,6 +69,21 @@
     margin: 0;
   }
 
+  // ---- clickable link item (FooterLink: same as item but clickable with hover) ----
+  &__link {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    margin: 0;
+    transition: color 0.15s ease;
+
+    &:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+  }
+
   // ---- tight vertical spacing (Tailwind: space-y-1) ----
   &__spaced-sm {
     display: flex;
@@ -188,9 +203,16 @@
     align-items: center;
   }
 
-  // ---- legal label (Tailwind: cursor-default) ----
+  // ---- legal label (Tailwind: text-white/70 text-xs hover:text-white) ----
   &__legal-label {
-    cursor: default;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.15s ease;
+
+    &:hover {
+      color: #fff;
+    }
   }
 
   // ---- legal separator (Tailwind: aria-hidden mx-2 text-white/30) ----

@@ -16,6 +16,7 @@ import VisionLogo from './logos/VisionLogo';
 ensureConfig([
   'LMS_BASE_URL',
   'LOGO_TRADEMARK_URL',
+  'KKUX_FOOTER_LINKS',
 ], 'Footer component');
 
 const EVENT_NAMES = {
@@ -36,6 +37,10 @@ const FooterColumn = ({ heading, children }) => (
   </div>
 );
 
+const FooterLink = ({ href, children }) => (
+  <a href={href} className="kkux-footer__item kkux-footer__link">{children}</a>
+);
+
 const FooterText = ({ children }) => (
   <p className="kkux-footer__item">{children}</p>
 );
@@ -43,6 +48,7 @@ const FooterText = ({ children }) => (
 const SiteFooter = () => {
   const intl = useIntl();
   const { config } = useContext(AppContext);
+  const footerLinks = config.KKUX_FOOTER_LINKS || {};
   const currentYear = new Date().getFullYear();
   const isArabic = intl.locale && intl.locale.startsWith('ar')
     || (typeof document !== 'undefined' && document.documentElement.dir === 'rtl');
@@ -67,23 +73,30 @@ const SiteFooter = () => {
   };
 
   const overviewLinks = [
-    { key: 'about', label: t(messages['footer.overview.about']) },
-    { key: 'contact', label: t(messages['footer.overview.contact']) },
-    { key: 'help', label: t(messages['footer.overview.help']) },
-    { key: 'terms', label: t(messages['footer.overview.terms']) },
+    { key: 'about', label: t(messages['footer.overview.about']), href: footerLinks.overview_about || '#' },
+    { key: 'contact', label: t(messages['footer.overview.contact']), href: footerLinks.overview_contact || '#' },
+    { key: 'help', label: t(messages['footer.overview.help']), href: footerLinks.overview_help || '#' },
+    { key: 'terms', label: t(messages['footer.overview.terms']), href: footerLinks.overview_terms || '#' },
   ];
 
   const legalLinks = [
-    { key: 'terms', label: t(messages['footer.legal.terms']) },
-    { key: 'privacy', label: t(messages['footer.legal.privacy']) },
-    { key: 'sitemap', label: t(messages['footer.legal.sitemap']) },
+    { key: 'terms', label: t(messages['footer.legal.terms']), href: footerLinks.legal_terms || '#' },
+    { key: 'privacy', label: t(messages['footer.legal.privacy']), href: footerLinks.legal_privacy || '#' },
+    { key: 'sitemap', label: t(messages['footer.legal.sitemap']), href: footerLinks.legal_sitemap || '#' },
   ];
 
   const relatedLinks = [
-    { key: 'vision', label: t(messages['footer.related.vision']) },
-    { key: 'kku', label: t(messages['footer.related.kku']) },
-    { key: 'ncel', label: t(messages['footer.related.ncel']) },
+    { key: 'vision', label: t(messages['footer.related.vision']), href: footerLinks.related_vision || '#' },
+    { key: 'kku', label: t(messages['footer.related.kku']), href: footerLinks.related_kku || '#' },
+    { key: 'ncel', label: t(messages['footer.related.ncel']), href: footerLinks.related_ncel || '#' },
   ];
+
+  const socialUrls = {
+    x: footerLinks.social_x || '#',
+    facebook: footerLinks.social_facebook || '#',
+    linkedin: footerLinks.social_linkedin || '#',
+    instagram: footerLinks.social_instagram || '#',
+  };
 
   return (
     <footer className="kkux-footer" role="contentinfo" aria-label={t(messages['footer.ariaLabel'])}>
@@ -92,31 +105,31 @@ const SiteFooter = () => {
         <div className="kkux-footer__grid">
           <FooterColumn heading={t(messages['footer.overview.heading'])}>
             {overviewLinks.map((item) => (
-              <FooterText key={item.key}>{item.label}</FooterText>
+              <FooterLink key={item.key} href={item.href}>{item.label}</FooterLink>
             ))}
           </FooterColumn>
 
           <FooterColumn heading={t(messages['footer.support.heading'])}>
-            <FooterText>{t(messages['footer.support.faq'])}</FooterText>
-            <FooterText>{t(messages['footer.support.complaint'])}</FooterText>
+            <FooterLink href={footerLinks.support_faq || '#'}>{t(messages['footer.support.faq'])}</FooterLink>
+            <FooterLink href={footerLinks.support_complaint || '#'}>{t(messages['footer.support.complaint'])}</FooterLink>
             <div className="kkux-footer__spaced-sm">
               <FooterText>
                 <span>{t(messages['footer.support.directLabel'])}</span>
-                <bdi className="kkux-footer__pe-sm">{t(messages['footer.support.phone'])}</bdi>
+                <bdi className="kkux-footer__pe-sm">{footerLinks.support_phone || t(messages['footer.support.phone'])}</bdi>
               </FooterText>
               <p className="kkux-footer__hours">
-                {t(messages['footer.support.hours'])}
+                {footerLinks.support_hours || t(messages['footer.support.hours'])}
               </p>
             </div>
             <FooterText>
               <span>{t(messages['footer.support.whatsappLabel'])}</span>
-              <bdi className="kkux-footer__pe-sm">{t(messages['footer.support.whatsappPhone'])}</bdi>
+              <bdi className="kkux-footer__pe-sm">{footerLinks.support_whatsapp || t(messages['footer.support.whatsappPhone'])}</bdi>
             </FooterText>
           </FooterColumn>
 
           <FooterColumn heading={t(messages['footer.related.heading'])}>
             {relatedLinks.map((item) => (
-              <FooterText key={item.key}>{item.label}</FooterText>
+              <FooterLink key={item.key} href={item.href}>{item.label}</FooterLink>
             ))}
           </FooterColumn>
 
@@ -125,10 +138,12 @@ const SiteFooter = () => {
               {socialLinks.map(({ key, Logo, labelKey }) => (
                 <li key={key}>
                   <a
-                    href="#"
+                    href={socialUrls[key] || '#'}
                     className="kkux-footer__social-icon"
                     aria-label={t(messages[labelKey])}
                     onClick={(e) => { e.preventDefault(); handleLinkClick(key); }}
+                    target={socialUrls[key] && socialUrls[key] !== '#' ? '_blank' : undefined}
+                    rel={socialUrls[key] && socialUrls[key] !== '#' ? 'noopener noreferrer' : undefined}
                   >
                     <Logo className="kkux-footer__social-svg" />
                   </a>
@@ -136,10 +151,10 @@ const SiteFooter = () => {
               ))}
             </ul>
             <a
-              href={`mailto:${t(messages['footer.support.email'])}`}
+              href={`mailto:${footerLinks.support_email || t(messages['footer.support.email'])}`}
               className="kkux-footer__email"
             >
-              <bdi>{t(messages['footer.support.email'])}</bdi>
+              <bdi>{footerLinks.support_email || t(messages['footer.support.email'])}</bdi>
             </a>
           </FooterColumn>
         </div>
@@ -152,7 +167,7 @@ const SiteFooter = () => {
             <ul className="kkux-footer__legal-list">
               {legalLinks.map((item, i) => (
                 <li key={item.key} className="kkux-footer__legal-item">
-                  <span className="kkux-footer__legal-label">{item.label}</span>
+                  <a href={item.href} className="kkux-footer__legal-label">{item.label}</a>
                   {i < legalLinks.length - 1 && (
                     <span aria-hidden="true" className="kkux-footer__legal-sep">|</span>
                   )}
