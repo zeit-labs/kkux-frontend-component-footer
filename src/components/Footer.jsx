@@ -184,10 +184,26 @@ const SiteFooter = () => {
               <PlatformPlainLogo className="kkux-footer__logo--platform" />
             </li>
             <li className="kkux-footer__logo-item">
-              <KingKhalidUniversityLogo className="kkux-footer__logo--kku" />
+              <a
+                href="https://www.kku.edu.sa/ar"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={t(messages['footer.related.kku'])}
+                onClick={() => handleLinkClick('https://www.kku.edu.sa/ar')}
+              >
+                <KingKhalidUniversityLogo className="kkux-footer__logo--kku" />
+              </a>
             </li>
             <li className="kkux-footer__logo-item">
-              <VisionLogo className="kkux-footer__logo--vision" />
+              <a
+                href="https://www.vision2030.gov.sa/ar"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={t(messages['footer.related.vision'])}
+                onClick={() => handleLinkClick('https://www.vision2030.gov.sa/ar')}
+              >
+                <VisionLogo className="kkux-footer__logo--vision" />
+              </a>
             </li>
           </ul>
         </div>
