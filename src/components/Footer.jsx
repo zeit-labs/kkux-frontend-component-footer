@@ -73,29 +73,29 @@ const SiteFooter = () => {
   };
 
   const overviewLinks = [
-    { key: 'about', label: t(messages['footer.overview.about']), href: footerLinks.overview_about || '#' },
-    { key: 'contact', label: t(messages['footer.overview.contact']), href: footerLinks.overview_contact || '#' },
-    { key: 'help', label: t(messages['footer.overview.help']), href: footerLinks.overview_help || '#' },
-    { key: 'terms', label: t(messages['footer.overview.terms']), href: footerLinks.overview_terms || '#' },
-  ];
+    { key: 'about', label: t(messages['footer.overview.about']), href: footerLinks.overview_about },
+    { key: 'contact', label: t(messages['footer.overview.contact']), href: footerLinks.overview_contact },
+    { key: 'help', label: t(messages['footer.overview.help']), href: footerLinks.overview_help },
+    { key: 'terms', label: t(messages['footer.overview.terms']), href: footerLinks.overview_terms },
+  ].filter((item) => item.href);
 
   const legalLinks = [
-    { key: 'terms', label: t(messages['footer.legal.terms']), href: footerLinks.legal_terms || '#' },
-    { key: 'privacy', label: t(messages['footer.legal.privacy']), href: footerLinks.legal_privacy || '#' },
-    { key: 'sitemap', label: t(messages['footer.legal.sitemap']), href: footerLinks.legal_sitemap || '#' },
-  ];
+    { key: 'terms', label: t(messages['footer.legal.terms']), href: footerLinks.legal_terms },
+    { key: 'privacy', label: t(messages['footer.legal.privacy']), href: footerLinks.legal_privacy },
+    { key: 'sitemap', label: t(messages['footer.legal.sitemap']), href: footerLinks.legal_sitemap },
+  ].filter((item) => item.href);
 
   const relatedLinks = [
-    { key: 'vision', label: t(messages['footer.related.vision']), href: footerLinks.related_vision || '#' },
-    { key: 'kku', label: t(messages['footer.related.kku']), href: footerLinks.related_kku || '#' },
-    { key: 'ncel', label: t(messages['footer.related.ncel']), href: footerLinks.related_ncel || '#' },
-  ];
+    { key: 'vision', label: t(messages['footer.related.vision']), href: footerLinks.related_vision },
+    { key: 'kku', label: t(messages['footer.related.kku']), href: footerLinks.related_kku },
+    { key: 'ncel', label: t(messages['footer.related.ncel']), href: footerLinks.related_ncel },
+  ].filter((item) => item.href);
 
   const socialUrls = {
-    x: footerLinks.social_x || '#',
-    facebook: footerLinks.social_facebook || '#',
-    linkedin: footerLinks.social_linkedin || '#',
-    instagram: footerLinks.social_instagram || '#',
+    x: footerLinks.social_x,
+    facebook: footerLinks.social_facebook,
+    linkedin: footerLinks.social_linkedin,
+    instagram: footerLinks.social_instagram,
   };
 
   return (
@@ -110,21 +110,33 @@ const SiteFooter = () => {
           </FooterColumn>
 
           <FooterColumn heading={t(messages['footer.support.heading'])}>
-            <FooterLink href={footerLinks.support_faq || '#'}>{t(messages['footer.support.faq'])}</FooterLink>
-            <FooterLink href={footerLinks.support_complaint || '#'}>{t(messages['footer.support.complaint'])}</FooterLink>
-            <div className="kkux-footer__spaced-sm">
+            {footerLinks.support_faq && (
+              <FooterLink href={footerLinks.support_faq}>{t(messages['footer.support.faq'])}</FooterLink>
+            )}
+            {footerLinks.support_complaint && (
+              <FooterLink href={footerLinks.support_complaint}>{t(messages['footer.support.complaint'])}</FooterLink>
+            )}
+            {(footerLinks.support_phone || footerLinks.support_hours) && (
+              <div className="kkux-footer__spaced-sm">
+                {footerLinks.support_phone && (
+                  <FooterText>
+                    <span>{t(messages['footer.support.directLabel'])}</span>
+                    <bdi className="kkux-footer__pe-sm">{footerLinks.support_phone}</bdi>
+                  </FooterText>
+                )}
+                {footerLinks.support_hours && (
+                  <p className="kkux-footer__hours">
+                    {footerLinks.support_hours}
+                  </p>
+                )}
+              </div>
+            )}
+            {footerLinks.support_whatsapp && (
               <FooterText>
-                <span>{t(messages['footer.support.directLabel'])}</span>
-                <bdi className="kkux-footer__pe-sm">{footerLinks.support_phone || t(messages['footer.support.phone'])}</bdi>
+                <span>{t(messages['footer.support.whatsappLabel'])}</span>
+                <bdi className="kkux-footer__pe-sm">{footerLinks.support_whatsapp}</bdi>
               </FooterText>
-              <p className="kkux-footer__hours">
-                {footerLinks.support_hours || t(messages['footer.support.hours'])}
-              </p>
-            </div>
-            <FooterText>
-              <span>{t(messages['footer.support.whatsappLabel'])}</span>
-              <bdi className="kkux-footer__pe-sm">{footerLinks.support_whatsapp || t(messages['footer.support.whatsappPhone'])}</bdi>
-            </FooterText>
+            )}
           </FooterColumn>
 
           <FooterColumn heading={t(messages['footer.related.heading'])}>
@@ -135,27 +147,29 @@ const SiteFooter = () => {
 
           <FooterColumn heading={t(messages['footer.follow.heading'])}>
             <ul className="kkux-footer__social-list">
-              {socialLinks.map(({ key, Logo, labelKey }) => (
+              {socialLinks.filter(({ key }) => socialUrls[key]).map(({ key, Logo, labelKey }) => (
                 <li key={key}>
                   <a
-                    href={socialUrls[key] || '#'}
+                    href={socialUrls[key]}
                     className="kkux-footer__social-icon"
                     aria-label={t(messages[labelKey])}
                     onClick={(e) => { e.preventDefault(); handleLinkClick(key); }}
-                    target={socialUrls[key] && socialUrls[key] !== '#' ? '_blank' : undefined}
-                    rel={socialUrls[key] && socialUrls[key] !== '#' ? 'noopener noreferrer' : undefined}
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <Logo className="kkux-footer__social-svg" />
                   </a>
                 </li>
               ))}
             </ul>
-            <a
-              href={`mailto:${footerLinks.support_email || t(messages['footer.support.email'])}`}
-              className="kkux-footer__email"
-            >
-              <bdi>{footerLinks.support_email || t(messages['footer.support.email'])}</bdi>
-            </a>
+            {footerLinks.support_email && (
+              <a
+                href={`mailto:${footerLinks.support_email}`}
+                className="kkux-footer__email"
+              >
+                <bdi>{footerLinks.support_email}</bdi>
+              </a>
+            )}
           </FooterColumn>
         </div>
       </div>
