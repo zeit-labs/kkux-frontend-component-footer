@@ -1,156 +1,185 @@
 import { defineMessages } from '@edx/frontend-platform/i18n';
 
+// Messages defined with English as defaultMessage (Open edX convention).
+// Arabic translations are provided in the 'ar' object below and selected
+// at runtime based on the current locale.
 const messages = defineMessages({
-  'footer.socialLinks.srText.facebook': {
-    id: 'footer.socialLinks.srText.facebook',
-    defaultMessage: 'Like edX on Facebook',
-    description: 'This is screenreader text for the edX Facebook social media link in the footer.',
+  'footer.overview.heading': {
+    id: 'footer.overview.heading',
+    defaultMessage: 'Overview',
+    description: 'Heading for the overview column in the KKUx footer.',
   },
-  'footer.socialLinks.srText.twitter': {
-    id: 'footer.socialLinks.srText.twitter',
-    defaultMessage: 'Follow edX on Twitter',
-    description: 'This is screenreader text for the edX Twitter social media link in the footer.',
+  'footer.overview.about': {
+    id: 'footer.overview.about',
+    defaultMessage: 'About KKUx',
+    description: 'Link to the about page.',
   },
-  'footer.socialLinks.srText.youtube': {
-    id: 'footer.socialLinks.srText.youtube',
-    defaultMessage: 'Subscribe to the edX YouTube channel',
-    description: 'This is screenreader text for the edX YouTube social media link in the footer.',
+  'footer.overview.contact': {
+    id: 'footer.overview.contact',
+    defaultMessage: 'Contact us',
+    description: 'Link to the contact page.',
   },
-  'footer.socialLinks.srText.linkedin': {
-    id: 'footer.socialLinks.srText.linkedin',
-    defaultMessage: 'Follow edX on LinkedIn',
-    description: 'This is screenreader text for the edX LinkedIn social media link in the footer.',
+  'footer.overview.help': {
+    id: 'footer.overview.help',
+    defaultMessage: 'Help center',
+    description: 'Link to the help center.',
   },
-  'footer.socialLinks.srText.reddit': {
-    id: 'footer.socialLinks.srText.reddit',
-    defaultMessage: 'Subscribe to the edX subreddit',
-    description: 'This is screenreader text for the edX reddit social media link in the footer.',
+  'footer.overview.terms': {
+    id: 'footer.overview.terms',
+    defaultMessage: 'Terms & Conditions',
+    description: 'Link to the terms and conditions page.',
   },
-  'footer.languageForm.select.label': {
-    id: 'footer.languageForm.select.label',
-    defaultMessage: 'Choose Language',
-    description: 'The label for the laguage select part of the language selection form.',
+  'footer.support.heading': {
+    id: 'footer.support.heading',
+    defaultMessage: 'Support & help',
+    description: 'Support column heading.',
   },
-  'footer.languageForm.submit.label': {
-    id: 'footer.languageForm.submit.label',
-    defaultMessage: 'Apply',
-    description: 'The label for button to submit the language selection form.',
+  'footer.support.faq': {
+    id: 'footer.support.faq',
+    defaultMessage: 'FAQ',
+    description: 'Link to the FAQ page.',
   },
-  'footer.edxLinks.about': {
-    id: 'footer.edxLinks.about',
-    defaultMessage: 'About',
-    description: 'The label for the link to the about edX page.',
+  'footer.support.complaint': {
+    id: 'footer.support.complaint',
+    defaultMessage: 'Submit a complaint',
+    description: 'Link to submit a complaint.',
   },
-  'footer.edxLinks.business': {
-    id: 'footer.edxLinks.business',
-    defaultMessage: 'edX for Business',
-    description: 'The label for the link to the edX for business page.',
+  'footer.support.directLabel': {
+    id: 'footer.support.directLabel',
+    defaultMessage: 'Direct line',
+    description: 'Label for the direct phone line.',
   },
-  'footer.edxLinks.affiliates': {
-    id: 'footer.edxLinks.affiliates',
-    defaultMessage: 'Affiliates',
-    description: 'The label for the link to the edX affiliates page.',
+  'footer.support.phone': {
+    id: 'footer.support.phone',
+    defaultMessage: '+966172417518',
+    description: 'The support phone number.',
   },
-  'footer.edxLinks.openEdx': {
-    id: 'footer.edxLinks.openEdx',
-    defaultMessage: 'Open edX',
-    description: 'The label for the link to the open edX site.',
+  'footer.support.hours': {
+    id: 'footer.support.hours',
+    defaultMessage: 'Saturday \u2013 8 AM to 3 PM',
+    description: 'Operating hours for support.',
   },
-  'footer.edxLinks.careers': {
-    id: 'footer.edxLinks.careers',
-    defaultMessage: 'Careers',
-    description: 'The label for the link to the edX Careers page.',
+  'footer.support.whatsappLabel': {
+    id: 'footer.support.whatsappLabel',
+    defaultMessage: 'WhatsApp',
+    description: 'Label for the WhatsApp contact.',
   },
-  'footer.edxLinks.news': {
-    id: 'footer.edxLinks.news',
-    defaultMessage: 'News',
-    description: 'The label for the link to the edX news page.',
+  'footer.support.whatsappPhone': {
+    id: 'footer.support.whatsappPhone',
+    defaultMessage: '+966172417518',
+    description: 'The WhatsApp phone number.',
   },
-  'footer.legalLinks.heading': {
-    id: 'footer.legalLinks.heading',
-    defaultMessage: 'Legal',
-    description: 'Heading for the legal links section of the footer.',
+  'footer.support.email': {
+    id: 'footer.support.email',
+    defaultMessage: 'kkux@kku.edu.sa',
+    description: 'The support email address.',
   },
-  'footer.legalLinks.termsOfService': {
-    id: 'footer.legalLinks.termsOfService',
-    defaultMessage: 'Terms of Service & Honor Code',
-    description: 'The label for the link to the edX terms of service page.',
+  'footer.related.heading': {
+    id: 'footer.related.heading',
+    defaultMessage: 'Related links',
+    description: 'Related links heading.',
   },
-  'footer.legalLinks.privacyPolicy': {
-    id: 'footer.legalLinks.privacyPolicy',
+  'footer.related.vision': {
+    id: 'footer.related.vision',
+    defaultMessage: 'Saudi Vision 2030',
+    description: 'Saudi Vision 2030 link.',
+  },
+  'footer.related.kku': {
+    id: 'footer.related.kku',
+    defaultMessage: 'King Khalid University',
+    description: 'King Khalid University link.',
+  },
+  'footer.related.ncel': {
+    id: 'footer.related.ncel',
+    defaultMessage: 'National Center for E-Learning',
+    description: 'National Center for E-Learning link.',
+  },
+  'footer.follow.heading': {
+    id: 'footer.follow.heading',
+    defaultMessage: 'Follow us',
+    description: 'Follow us heading.',
+  },
+  'footer.social.x.label': {
+    id: 'footer.social.x.label',
+    defaultMessage: 'X',
+    description: 'X social icon aria-label.',
+  },
+  'footer.social.facebook.label': {
+    id: 'footer.social.facebook.label',
+    defaultMessage: 'Facebook',
+    description: 'Facebook social icon aria-label.',
+  },
+  'footer.social.linkedin.label': {
+    id: 'footer.social.linkedin.label',
+    defaultMessage: 'LinkedIn',
+    description: 'LinkedIn social icon aria-label.',
+  },
+  'footer.social.instagram.label': {
+    id: 'footer.social.instagram.label',
+    defaultMessage: 'Instagram',
+    description: 'Instagram social icon aria-label.',
+  },
+  'footer.legal.terms': {
+    id: 'footer.legal.terms',
+    defaultMessage: 'Terms & Conditions',
+    description: 'Terms link in bottom bar.',
+  },
+  'footer.legal.privacy': {
+    id: 'footer.legal.privacy',
     defaultMessage: 'Privacy Policy',
-    description: 'The label for the link to the edX privacy policy page.',
+    description: 'Privacy policy link in bottom bar.',
   },
-  'footer.legalLinks.a11yPolicy': {
-    id: 'footer.legalLinks.a11yPolicy',
-    defaultMessage: 'Accessibility Policy',
-    description: 'The label for the link to the edX accessibility policy page.',
+  'footer.legal.sitemap': {
+    id: 'footer.legal.sitemap',
+    defaultMessage: 'Site map',
+    description: 'Sitemap link.',
   },
-  'footer.legalLinks.trademarkPolicy': {
-    id: 'footer.legalLinks.trademarkPolicy',
-    defaultMessage: 'Trademark Policy',
-    description: 'The label for the link to the edX trademark policy page.',
+  'footer.copyright': {
+    id: 'footer.copyright',
+    defaultMessage: 'All rights reserved to King Khalid University \u00a9 {year}',
+    description: 'Copyright text.',
   },
-  'footer.legalLinks.sitemap': {
-    id: 'footer.legalLinks.sitemap',
-    defaultMessage: 'Sitemap',
-    description: 'The label for the link to the edX sitemap page.',
-  },
-  'footer.connectLinks.heading': {
-    id: 'footer.connectLinks.heading',
-    defaultMessage: 'Connect',
-    description: 'Heading for the connect links section of the footer.',
-  },
-  'footer.connectLinks.blog': {
-    id: 'footer.connectLinks.blog',
-    defaultMessage: 'Blog',
-    description: 'The label for the link to the edX blog.',
-  },
-  'footer.connectLinks.contact': {
-    id: 'footer.connectLinks.contact',
-    defaultMessage: 'Contact Us',
-    description: 'The label for the link to the contact edX page.',
-  },
-  'footer.connectLinks.help': {
-    id: 'footer.connectLinks.help',
-    defaultMessage: 'Help Center',
-    description: 'The label for the link to the edX help center.',
-  },
-  'footer.connectLinks.mediaKit': {
-    id: 'footer.connectLinks.mediaKit',
-    defaultMessage: 'Media Kit',
-    description: 'The label for the link to the edX media kit page.',
-  },
-  'footer.connectLinks.donate': {
-    id: 'footer.connectLinks.donate',
-    defaultMessage: 'Donate',
-    description: 'The label for the link to the edX donation page.',
-  },
-  'footer.mobileApp.apple': {
-    id: 'footer.mobileApp.apple',
-    defaultMessage: 'Download the edX mobile app from the Apple App Store',
-    description: 'The label for the link to download the apple version of the edX app.',
-  },
-  'footer.mobileApp.google': {
-    id: 'footer.mobileApp.google',
-    defaultMessage: 'Download the edX mobile app from Google Play',
-    description: 'The label for the link to download the google version of the edX app.',
-  },
-  'footer.logo.altText': {
-    id: 'footer.logo.altText',
-    defaultMessage: 'Powered by Open edX',
-    description: 'alt text for the footer logo.',
-  },
-  'footer.logo.ariaLabel': {
-    id: 'footer.logo.ariaLabel',
-    defaultMessage: 'edX Home',
-    description: 'aria-label for the footer logo.',
+  'footer.logos.ariaLabel': {
+    id: 'footer.logos.ariaLabel',
+    defaultMessage: 'Partner logos',
+    description: 'Partner logos aria-label.',
   },
   'footer.ariaLabel': {
     id: 'footer.ariaLabel',
     defaultMessage: 'Page Footer',
-    description: 'aria-label for the footer component',
+    description: 'Footer component aria-label.',
   },
 });
+
+// Arabic translations: same message IDs, with Arabic text.
+// These override defaultMessage when the locale starts with 'ar'.
+export const arMessages = {
+  'footer.overview.heading': '\u0646\u0628\u0630\u0629 \u0639\u0627\u0645\u0629',
+  'footer.overview.about': '\u062d\u0648\u0644 KKUx',
+  'footer.overview.contact': '\u0627\u062a\u0635\u0644 \u0628\u0646\u0627',
+  'footer.overview.help': '\u0645\u0631\u0643\u0632 \u0627\u0644\u0645\u0633\u0627\u0639\u062f\u0629',
+  'footer.overview.terms': '\u0627\u0644\u0634\u0631\u0648\u0637 \u0648\u0627\u0644\u0623\u062d\u0643\u0627\u0645',
+  'footer.support.heading': '\u0627\u0644\u062f\u0639\u0645 \u0648\u0627\u0644\u0645\u0633\u0627\u0639\u062f\u0629',
+  'footer.support.faq': '\u0627\u0644\u0623\u0633\u0626\u0644\u0629 \u0627\u0644\u0634\u0627\u0626\u0639\u0629',
+  'footer.support.complaint': '\u062a\u0642\u062f\u064a\u0645 \u0634\u0643\u0648\u0649',
+  'footer.support.directLabel': '\u062e\u0637 \u0645\u0628\u0627\u0634\u0631',
+  'footer.support.hours': '\u0627\u0644\u0633\u0628\u062a \u2013 \u0645\u0646 \u0668 \u0635\u0628\u0627\u062d\u0627\u064b \u062d\u062a\u0649 \u0663 \u0645\u0633\u0627\u0621\u064b',
+  'footer.support.whatsappLabel': '\u0648\u0627\u062a\u0633\u0627\u0628',
+  'footer.related.heading': '\u0631\u0648\u0627\u0628\u0637 \u0630\u0627\u062a \u0635\u0644\u0629',
+  'footer.related.vision': '\u0631\u0624\u064a\u0629 \u0627\u0644\u0633\u0639\u0648\u062f\u064a\u0629 2030',
+  'footer.related.kku': '\u062c\u0627\u0645\u0639\u0629 \u0627\u0644\u0645\u0644\u0643 \u062e\u0627\u0644\u062f',
+  'footer.related.ncel': '\u0627\u0644\u0645\u0631\u0643\u0632 \u0627\u0644\u0648\u0637\u0646\u064a \u0644\u0644\u062a\u0639\u0644\u064a\u0645 \u0627\u0644\u0625\u0644\u0643\u062a\u0631\u0648\u0646\u064a',
+  'footer.follow.heading': '\u062a\u0627\u0628\u0639\u0646\u0627',
+  'footer.social.x.label': 'X',
+  'footer.social.facebook.label': '\u0641\u064a\u0633\u0628\u0648\u0643',
+  'footer.social.linkedin.label': '\u0644\u064a\u0646\u0643\u062f \u0625\u0646',
+  'footer.social.instagram.label': '\u0625\u0646\u0633\u062a\u062c\u0631\u0627\u0645',
+  'footer.legal.terms': '\u0627\u0644\u0634\u0631\u0648\u0637 \u0648\u0627\u0644\u0623\u062d\u0643\u0627\u0645',
+  'footer.legal.privacy': '\u0633\u064a\u0627\u0633\u0629 \u0627\u0644\u062e\u0635\u0648\u0635\u064a\u0629',
+  'footer.legal.sitemap': '\u062e\u0631\u064a\u0637\u0629 \u0627\u0644\u0645\u0648\u0642\u0639',
+  'footer.copyright': '\u062c\u0645\u064a\u0639 \u0627\u0644\u062d\u0642\u0648\u0642 \u0645\u062d\u0641\u0648\u0638\u0629 \u0644\u062c\u0627\u0645\u0639\u0629 \u0627\u0644\u0645\u0644\u0643 \u062e\u0627\u0644\u062f \u00a9 {year}',
+  'footer.logos.ariaLabel': '\u0634\u0639\u0627\u0631\u0627\u062a \u0627\u0644\u0634\u0631\u0643\u0627\u0621',
+  'footer.ariaLabel': '\u062a\u0630\u064a\u064a\u0644 \u0627\u0644\u0635\u0641\u062d\u0629',
+};
 
 export default messages;
