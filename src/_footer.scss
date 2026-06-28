@@ -254,9 +254,9 @@
     flex-shrink: 0;
   }
 
-  // ---- Platform logo (Tailwind: size-30 = 120px) ----
+  // ---- Platform logo (matches marketing site: 167.125px) ----
   &__logo--platform {
-    width: 7.5rem;            // size-30
+    width: 167.125px;
     height: auto;
     color: #fff;
   }
