@@ -9,9 +9,9 @@ import XLogo from './logos/XLogo';
 import FacebookLogo from './logos/FacebookLogo';
 import InstagramLogo from './logos/InstagramLogo';
 import LinkedInLogo from './logos/LinkedInLogo';
-import PlatformPlainLogo from './logos/PlatformPlainLogo';
 import KingKhalidUniversityLogo from './logos/KingKhalidUniversityLogo';
 import VisionLogo from './logos/VisionLogo';
+import KKUxLogo from './logos/KKUxLogo';
 
 ensureConfig([
   'LMS_BASE_URL',
@@ -195,7 +195,7 @@ const SiteFooter = () => {
 
           <ul className="kkux-footer__logos" aria-label={t(messages['footer.logos.ariaLabel'])}>
             <li className="kkux-footer__logo-item">
-              <PlatformPlainLogo className="kkux-footer__logo--platform" />
+              <KKUxLogo className="kkux-footer__logo--platform" />
             </li>
             <li className="kkux-footer__logo-item">
               <a
