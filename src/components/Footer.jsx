@@ -76,7 +76,6 @@ const SiteFooter = () => {
     { key: 'about', label: t(messages['footer.overview.about']), href: footerLinks.overview_about },
     { key: 'contact', label: t(messages['footer.overview.contact']), href: footerLinks.overview_contact },
     { key: 'help', label: t(messages['footer.overview.help']), href: footerLinks.overview_help },
-    { key: 'terms', label: t(messages['footer.overview.terms']), href: footerLinks.overview_terms },
   ].filter((item) => item.href);
 
   const legalLinks = [
@@ -126,7 +125,7 @@ const SiteFooter = () => {
                 )}
                 {footerLinks.support_hours && (
                   <p className="kkux-footer__hours">
-                    {footerLinks.support_hours}
+                    {t(messages['footer.support.hours'])}
                   </p>
                 )}
               </div>
@@ -153,7 +152,7 @@ const SiteFooter = () => {
                     href={socialUrls[key]}
                     className="kkux-footer__social-icon"
                     aria-label={t(messages[labelKey])}
-                    onClick={(e) => { e.preventDefault(); handleLinkClick(key); }}
+                    onClick={() => handleLinkClick(socialUrls[key])}
                     target="_blank"
                     rel="noopener noreferrer"
                   >

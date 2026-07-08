@@ -232,13 +232,13 @@
     margin: 0;
   }
 
-  // ---- logo list (Tailwind: flex list-none flex-wrap items-center justify-start gap-x-6 gap-y-4 md:justify-end) ----
+  // ---- logo list (Tailwind: flex list-none flex-wrap items-center justify-start gap-x-10 gap-y-4 md:justify-end) ----
   &__logos {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: flex-start;
-    column-gap: 1.5rem;       // gap-x-6
+    column-gap: 2.5rem;       // gap-x-10 (was gap-x-6)
     row-gap: 1rem;            // gap-y-4
     list-style: none;
     margin: 0;
@@ -249,9 +249,13 @@
     }
   }
 
-  // ---- logo item (Tailwind: shrink-0) ----
+  // ---- logo item (Tailwind: shrink-0; first item also gets -me-7 = -28px to overlap its right margin) ----
   &__logo-item {
     flex-shrink: 0;
+
+    &:first-child {
+      margin-inline-end: -1.75rem;  // -me-7 = -28px — pulls KKUx logo toward the KKU logo to match the marketing site
+    }
   }
 
   // ---- Platform logo (matches marketing site: 167.125px) ----
